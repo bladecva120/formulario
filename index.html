@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulário em HTML e CSS</h1> <!--"action" é o parâmetro de envio do formulário; "autocomplete" retira a sugestão de autopreenchimento-->
+    <form action="cadastro.php" autocomplete="off">
+        <p> <label for="inome">Nome:</label>
+            <input type="text" name="Nome" id="inome"></p>
+            <!--"label" relaciona o nome com a caixa de texto-->
+        <p><label for="isobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="isobrenome"></p>
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+</body>
+</html>
