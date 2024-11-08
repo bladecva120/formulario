@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
 </head>
+
 <body>
-    <h1>Formulário em HTML e CSS</h1> <!--"action" é o parâmetro de envio do formulário; "autocomplete" retira a sugestão de autopreenchimento-->
-    <form action="cadastro.php" autocomplete="off">
-        <p> <label for="inome">Nome:</label>
-            <input type="text" name="Nome" id="inome"></p>
-            <!--"label" relaciona o nome com a caixa de texto-->
-        <p><label for="isobrenome">Sobrenome:</label>
-            <input type="text" name="sobrenome" id="isobrenome"></p>
-        <p><input type="submit" value="Enviar"></p>
+    <h1>Formulário em HTML e CSS</h1>
+    <!--"action" é o parâmetro de envio do formulário; "autocomplete" retira a sugestão de autopreenchimento-->
+
+    <fieldset><legend>Formulário de cadastro</legend>
+    <form action="cadastro.php" autocomplete="off" method="post">
+       
+        <!--"label" relaciona o nome com a caixa de texto-->
+        <p>
+            <label for="inome">
+                Nome:
+            </label>
+            <input type="text" name="nome" id="inome" required minlength="2" maxlength="20" placeholder="Nome completo...">
+        </p>
+
+        <p>
+            <label for="iemail">
+                E-mail:
+            </label>
+            <input type="email" name="email" id="iemail">
+        </p>
+
+        <p>
+            <label for="isenha">
+                Senha:
+            </label>
+            <input type="password" name="senha" id="isenha" minlength="2" maxlength="10">
+        </p>
+        <p>
+            <label for="idate-local">
+                Data/Horário:
+            </label>
+            <input type="datetime-local" name="date-local" id="idate-local">
+            <input type="month" name="month" id="imonth">
+        </p>
+
+        <p>
+            <label for="itel">
+                Telefone:
+            </label>
+            <input type="tel" name="tel" id="itel" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" placeholder="(xx)xxxx-xxxx">
+            <input type="range" name="range" id="irange" max="100">
+            <input type="color" name="cor" id="icor" value="#ff0000">
+        </p>
+
+        <fieldset><legend>Radio</legend>
+            <p>
+                <input type="radio" name="radio" id="iradio">
+                Masculino<br>
+                <input type="radio" name="radio" id="iradio">
+                Feminino
+            </p>
+        </fieldset>
+
+        <fieldset><legend>Checkbox</legend>
+            <p>
+                <input type="checkbox" name="check" id="icheck">Calça <br>
+                <input type="checkbox" name="check" id="icheck"> Camisa <br>
+                <input type="checkbox" name="check" id="icheck" checked>Cueca
+            </p>
+        </fieldset>
+
+        <fieldset><legend>Baixar arquivo</legend>
+            <p>
+                Clique aqui <input type="file" name="ifile" id="">
+            </p>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+    </fieldset>
     </form>
 </body>
+
 </html>
