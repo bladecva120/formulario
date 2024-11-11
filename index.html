@@ -5,79 +5,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
+
 </head>
 
 <body>
     <h1>Formulário em HTML e CSS</h1>
     <!--"action" é o parâmetro de envio do formulário; "autocomplete" retira a sugestão de autopreenchimento-->
 
-    <fieldset><legend>Formulário de cadastro</legend>
-    <form action="cadastro.php" autocomplete="off" method="post">
-       
-        <!--"label" relaciona o nome com a caixa de texto-->
-        <p>
-            <label for="inome">
-                Nome:
-            </label>
-            <input type="text" name="nome" id="inome" required minlength="2" maxlength="20" placeholder="Nome completo...">
-        </p>
+    <fieldset>
+        <legend>Formulário de cadastro</legend>
+        <form action="cadastro.php" autocomplete="off" method="post">
 
-        <p>
-            <label for="iemail">
-                E-mail:
-            </label>
-            <input type="email" name="email" id="iemail">
-        </p>
-
-        <p>
-            <label for="isenha">
-                Senha:
-            </label>
-            <input type="password" name="senha" id="isenha" minlength="2" maxlength="10">
-        </p>
-        <p>
-            <label for="idate-local">
-                Data/Horário:
-            </label>
-            <input type="datetime-local" name="date-local" id="idate-local">
-            <input type="month" name="month" id="imonth">
-        </p>
-
-        <p>
-            <label for="itel">
-                Telefone:
-            </label>
-            <input type="tel" name="tel" id="itel" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" placeholder="(xx)xxxx-xxxx">
-            <input type="range" name="range" id="irange" max="100">
-            <input type="color" name="cor" id="icor" value="#ff0000">
-        </p>
-
-        <fieldset><legend>Radio</legend>
+            <!--"label" relaciona o nome com a caixa de texto-->
             <p>
-                <input type="radio" name="radio" id="iradio">
-                Masculino<br>
-                <input type="radio" name="radio" id="iradio">
-                Feminino
+                <label for="inome">
+                    Nome:
+                </label>
+                <input type="text" name="nome" id="inome" required minlength="2" maxlength="20"
+                    placeholder="Nome completo...">
             </p>
-        </fieldset>
 
-        <fieldset><legend>Checkbox</legend>
             <p>
-                <input type="checkbox" name="check" id="icheck">Calça <br>
-                <input type="checkbox" name="check" id="icheck"> Camisa <br>
-                <input type="checkbox" name="check" id="icheck" checked>Cueca
+                <label for="iemail">
+                    E-mail:
+                </label>
+                <input type="email" name="email" id="iemail">
             </p>
-        </fieldset>
 
-        <fieldset><legend>Baixar arquivo</legend>
             <p>
-                Clique aqui <input type="file" name="ifile" id="">
+                <label for="isenha">
+                    Senha:
+                </label>
+                <input type="password" name="senha" id="isenha" minlength="2" maxlength="10">
             </p>
-        </fieldset>
-        <p>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Limpar">
-        </p>
+            <p>
+                <label for="idate-local">
+                    Data/Horário:
+                </label>
+                <input type="datetime-local" name="date-local" id="idate-local">
+                <input type="month" name="month" id="imonth">
+            </p>
+
+            <p>
+                <label for="itel">
+                    Telefone:
+                </label>
+                <input type="tel" name="tel" id="itel" pattern="^\(\d{2}\)\d{4,5}-\d{4}$" placeholder="(xx)xxxx-xxxx">
+                <input type="range" name="range" id="irange" max="100">
+                <input type="color" name="cor" id="icor" value="#ff0000">
+            </p>
+
+            <fieldset id="radio">
+                <legend>Radio, Lista de Itens e DataList</legend>
+                <p>
+                    <input type="radio" name="radio" id="iradio">
+                    Masculino<br>
+                    <input type="radio" name="radio" id="iradio">
+                    Feminino
+                </p>
+
+                <p>
+                    <label for="iestado">
+                        Estado:
+                    </label>
+                    <select name="estado" id="iestado">
+                        <option value="*">---Selecione um Estado---</option>
+                        <optgroup label="Região Norte:">
+                            <option value="RR">Boa Vista</option>
+                            <option value="AM">Manaus</option>
+                            <option value="AC">Rio Branco</option>
+                        </optgroup>
+
+                        <optgroup label="Região Sudeste:">
+                            <option value="SP">São Paulo</option>
+                            <option value="CE">Fortaleza</option>
+                        </optgroup>
+
+                    </select>
+                </p>
+
+                <label for="iprof">
+                    Profissão:
+                </label>
+                <input type="text" name="prof" id="iprof" list="idata">
+                <datalist id="idata">
+                    <optgroup label="Obra:">
+                        <option>Marceneiro</option>
+                        <option>Pedreiro</option>
+                    </optgroup>
+                    <option>Farmacêutico</option>
+                    <option>Programador</option>
+                </datalist>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Checkbox</legend>
+                <p>
+                    <input type="checkbox" name="check" id="icheck">Calça <br>
+                    <input type="checkbox" name="check" id="icheck"> Camisa <br>
+                    <input type="checkbox" name="check" id="icheck" checked>Cueca
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Baixar arquivo</legend>
+                <p>
+                    Clique aqui <input type="file" name="ifile" id="">
+                </p>
+            </fieldset>
+            <p>
+                <label for="campo">
+                    Campo de Texto:
+                </label><br>
+                <textarea name="area" id="iarea" cols="30" rows="10"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
 
     </fieldset>
     </form>
